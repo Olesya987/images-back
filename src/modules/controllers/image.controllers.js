@@ -7,7 +7,7 @@ module.exports.postImage = async (req, res) => {
     const { img } = files;
     let end = img.name.split(".");
     end = end[end.length - 1];
-    let fileName = uuid.v4() + "." + end;
+    const fileName = uuid.v4() + "." + end;
     img.mv("/home/user/Desktop/study/images-front/public/images/" + fileName);
     res.send(fileName);
   } else {
